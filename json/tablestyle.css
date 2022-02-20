@@ -1,0 +1,17 @@
+
+h1{
+    text-align: center;
+    color: #8EC837;
+    
+    padding: 2%;
+}
+
+.table{
+    background-color: #8EC837;
+    width: 95%;
+}
+.table tr th{
+    font-size: 1.2rem;
+    text-align: center;
+    background-color:#8EC837;
+}

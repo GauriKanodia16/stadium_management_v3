@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>STADIUMS</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+
+<body id="top">
+    <div class="wrapper row0">
+      <div id="topbar" class="hoc clear"> 
+        <!-- ################################################################################################ -->
+        <div class="fl_left">
+          <ul class="nospace">
+            <li><i class="fas fa-mobile-alt rgtspace-5"></i> +00 (123) 456 7890</li>
+            <li><i class="far fa-envelope rgtspace-5"></i> info@domain.com</li>
+          </ul>
+        </div>
+        <div class="fl_right">
+          <ul class="nospace">
+            <li><a href="#"><i class="fas fa-home"></i></a></li>
+            <li><a href="#" title="Help Centre"><i class="far fa-life-ring"></i></a></li>
+            <li><a href="#" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
+            <li><a href="#" title="Sign Up"><i class="fas fa-edit"></i></a></li>
+            <li id="searchform">
+              <div>
+                <form action="#" method="post">
+                  <fieldset>
+                    <legend>Quick Search:</legend>
+                    <input type="text" placeholder="Enter search term&hellip;">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                  </fieldset>
+                </form>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- ################################################################################################ -->
+      </div>
+    </div>
+  <div>
+      <p>
+
+          
+        </p>
+  </div>
+    <header id="header" class="hoc clear">
+      <div id="logo" class="fl_left"> 
+        <!-- ################################################################################################ -->
+        <h1><a href="index.html">STADIUMS</a></h1>
+        <!-- ################################################################################################ -->
+      </div>
+      <nav id="mainav" class="fl_right"> 
+        <!-- ################################################################################################ -->
+        <ul class="clear">
+          <li><a href="index.html">Home</a></li>
+  
+          <li><a href="#">About Us</a></li>
+  
+          <li><a class="drop" href="#">Events</a>
+            <ul>
+              <li><a href="#">Organise Events</a></li>
+              <li><a class="drop" href="#">Upcoming Events</a>
+                <ul>
+                  <li><a href="#">Sports</a></li>
+                  <li><a href="#">Concerts</a></li>
+                  <li><a href="#">Corporate</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Past events</a></li>
+            </ul>
+          </li>
+  
+  
+          <li><a class="drop" href="html files/stadium_list.html">Our Stadiums</a>
+            <ul>
+              <li><a href="html files/stadium_list_NI.html">North India</a></li>
+              <li><a href="html files/stadium_list_SI.html">South India</a></li>
+              <li><a href="html files/stadium_list_canada.html">Canada</a></li>
+              <li><a href="html files/stadium_list_SA.html">South Africa</a></li>
+              <li><a href="html files/add_stadium.html">JOIN US NOW</a></li>
+  
+              
+            </ul>
+          </li>
+          
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="#">Contact Us</a></li>
+          
+        </ul>
+        <!-- ################################################################################################ -->
+      </nav>
+    </header>
+    <div>
+      <p>
+          
+          
+        </p>
+  </div> 
+
+    <div id='content'>
+        <table id='stadium' cellpadding='10px' style="text-align:left;">
+            <thead>
+                <tr>
+                    <th>Stadium Name</th>
+                    <th>Seats Available</th>
+                    <th>Country</th>
+                    <th>Owner</th>
+                </tr>                
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <script>
+        let xmlContent = '';
+        let tableStadium = document.getElementById('stadium');
+        fetch('xml/stadium_list.xml').then((response)=> {
+            response.text().then((xml)=>{
+                xmlContent = xml;
+
+                let parser = new DOMParser();
+                let xmlDOM = parser.parseFromString(xmlContent, 'application/xml');
+                let stdm = xmlDOM.querySelectorAll('Stadium');
+
+                stdm.forEach(stadiumXmlNode => {
+
+                    if(stadiumXmlNode.children[2].innerHTML == "North India"){
+
+                    let row = document.createElement('tr');
+
+                    //Stadium Name
+                    let td = document.createElement('td');
+                    td.innerText = stadiumXmlNode.children[0].innerHTML;
+                    row.appendChild(td);
+
+                    // Seats Available
+                    td = document.createElement('td');
+                    td.innerText = stadiumXmlNode.children[1].innerHTML;
+                    row.appendChild(td);
+                    
+                    //Country
+                    td = document.createElement('td');
+                    td.innerText = stadiumXmlNode.children[2].innerHTML;
+                    row.appendChild(td);
+
+                    //Owner
+                    td = document.createElement('td');
+                    td.innerText = stadiumXmlNode.children[3].innerHTML;
+                    row.appendChild(td);
+
+                 tableStadium.children[1].appendChild(row);
+                    }
+                    
+                });
+                
+            });
+        });    
+    </script>
+<footer>
+<div class="wrapper row1">
+    <section id="ctdetails" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <ul class="nospace clear">
+        <li class="one_quarter first">
+          <div class="block clear"><a href="#"><i class="fas fa-phone"></i></a> <span><strong>Give us a call:</strong> +00 (123) 456 7890</span></div>
+        </li>
+        <li class="one_quarter">
+          <div class="block clear"><a href="#"><i class="fas fa-envelope"></i></a> <span><strong>Send us a mail:</strong> support@domain.com</span></div>
+        </li>
+        <li class="one_quarter">
+          <div class="block clear"><a href="#"><i class="fas fa-clock"></i></a> <span><strong> Mon. - Sat.:</strong> 08.00am - 18.00pm</span></div>
+        </li>
+        <li class="one_quarter">
+          <div class="block clear"><a href="#"><i class="fas fa-map-marker-alt"></i></a> <span><strong>Come visit us:</strong> Directions to <a href="#">our location</a></span></div>
+        </li>
+      </ul>
+      <!-- ################################################################################################ -->
+    </section>
+  </div>
+</footer>
+</body>
+</html>

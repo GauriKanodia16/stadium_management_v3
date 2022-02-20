@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Stadiums_List>
+
+  <Stadium>
+    <Name > balaji stadiums </Name>
+    <Seats>2000</Seats>
+    <country>South India</country>
+    <owner>Aman Waliya</owner>    
+</Stadium>
+
+  <Stadium>
+    <Name >wembley</Name>
+    <Seats>5000</Seats>
+    <country>Canada</country>
+    <owner>bhagwaan singh</owner>    
+</Stadium>
+
+  <Stadium>
+    <Name>N.modi stadium </Name>
+    <Seats>10000</Seats>
+    <country>North India</country>
+    <owner>Pankaj Rajesh</owner>    
+</Stadium>
+
+  <Stadium>
+    <Name >melbourn ground  </Name>
+    <Seats>15000</Seats>
+    <country>South Africa</country>
+    <owner>pankhuri jha</owner>    
+</Stadium>
+
+  <Stadium>
+    <Name>ch. shivaji ground </Name>
+    <Seats>100000</Seats>
+    <country>North India</country>
+    <owner>prakash jha</owner>    
+</Stadium>
+
+<Stadium>
+  <Name > chinnaswamy stadium </Name>
+  <Seats>2000</Seats>
+  <country>North India</country>
+  <owner>Aman Waliya</owner>    
+</Stadium>
+
+<Stadium>
+  <Name >eden garden</Name>
+  <Seats>5000</Seats>
+  <country> South India</country>
+  <owner>bhagwaan singh</owner>    
+</Stadium>
+
+<Stadium>
+  <Name>abc stadium</Name>
+  <Seats>10000</Seats>
+  <country>Canada</country>
+  <owner>Pankaj Rajesh</owner>    
+</Stadium>
+
+<Stadium>
+  <Name >wankhade stadium </Name>
+  <Seats>15000</Seats>
+  <country>North India</country>
+  <owner>pankhuri jha</owner>    
+</Stadium>
+
+<Stadium>
+  <Name>xyz stadium</Name>
+  <Seats>100000</Seats>
+  <country>South India</country>
+  <owner>prakash jha</owner>    
+</Stadium>
+
+<Stadium>
+  <Name > Ekana International Cricket Stadium </Name>
+  <Seats>2000</Seats>
+  <country>North India</country>
+  <owner>Aman Waliya</owner>    
+</Stadium>
+
+<Stadium>
+  <Name >Greenfield International Stadium</Name>
+  <Seats>5000</Seats>
+  <country>South India</country>
+  <owner>bhagwaan singh</owner>    
+</Stadium>
+
+<Stadium>
+  <Name>Salt Lake Stadium</Name>
+  <Seats>10000</Seats>
+  <country>South Africa</country>
+  <owner>Pankaj Rajesh</owner>    
+</Stadium>
+
+<Stadium>
+  <Name >Jawaharlal Nehru Stadium</Name>
+  <Seats>60500</Seats>
+  <country>South Africa</country>
+  <owner>pankhuri jha</owner>    
+</Stadium>
+
+<Stadium>
+  <Name>Rajiv Gandhi International Stadium</Name>
+  <Seats>100000</Seats>
+  <country>Canada</country>
+  <owner>prakash jha</owner>    
+</Stadium>
+ 
+
+</Stadiums_List>

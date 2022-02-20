@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Title Page-->
+    
+
+
+    <!-- Main CSS-->
+    <link href="/css/main_Reg.css" rel="stylesheet" media="all">
+    <link href="/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+
+    
+    <style>
+        .button {
+          background-color: greenyellow;
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        </style>
+
+    <script>
+        var xmlDoc;
+        function loadxmldoc() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    xmlDoc = this.responseXML;
+                    myFunction();
+                }
+            };
+            xmlhttp.open("GET", "xml/stadium_list.xml", true);
+            xmlhttp.send();
+        }
+        function myFunction(xml , action) {
+    
+            var x, i, table;
+    
+          
+            if (action == "create") {
+               var a = document.getElementById("name").value;
+               var b= document.getElementById("owner").value;
+               var c= document.getElementById("country").value;
+               var d= document.getElementById("seats").value;
+
+             
+    
+    
+                var i
+                var details = []
+                Stadium = xmlDoc.createElement("Stadiums_List/Stadium")
+                details[0] = xmlDoc.createElement("Name");
+                details[0].appendChild(xmlDoc.createTextNode(a))
+                Stadium.appendChild(details[0])
+
+                details[1] = xmlDoc.createElement("Seats")
+                details[1].appendChild(xmlDoc.createTextNode(d))
+                Stadium.appendChild(details[1])
+
+                details[2] = xmlDoc.createElement("country")
+                details[2].appendChild(xmlDoc.createTextNode(c))
+                Stadium.appendChild(details[2])
+
+                details[3] = xmlDoc.createElement("owner")
+                details[3].appendChild(xmlDoc.createTextNode(b))
+                Stadium.appendChild(details[3]) 
+    
+                xmlDoc.documentElement.appendChild(Stadium);
+
+                alert('The Stadium has been added');
+         
+            }
+                document.getElementById("demo").innerHTML = table;
+            
+        }
+    
+    </script>
+
+
+</head>
+
+<body id="top">
+	
+    <div class="wrapper row0">
+      <div id="topbar" class="hoc clear"> 
+        <!-- ################################################################################################ -->
+        <div class="fl_left">
+          <ul class="nospace">
+            <li><i class="fas fa-mobile-alt rgtspace-5"></i> +00 (123) 456 7890</li>
+            <li><i class="far fa-envelope rgtspace-5"></i> info@domain.com</li>
+          </ul>
+        </div>
+        <div class="fl_right">
+          <ul class="nospace">
+            <li><a href="#"><i class="fas fa-home"></i></a></li>
+            <li><a href="#" title="Help Centre"><i class="far fa-life-ring"></i></a></li>
+            <li><a href="#" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
+            <li><a href="#" title="Sign Up"><i class="fas fa-edit"></i></a></li>
+            <li id="searchform">
+              <div>
+                <form action="#" method="post">
+                  <fieldset>
+                    <legend>Quick Search:</legend>
+                    <input type="text" placeholder="Enter search term&hellip;">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                  </fieldset>
+                </form>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- ################################################################################################ -->
+      </div>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    
+  <!-- Top Background Image Wrapper -->
+  <div class="bgded overlay padtop" style="background-image:url('images/demo/main_stadium.jpg');"> 
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <header id="header" class="hoc clear">
+      <div id="logo" class="fl_left"> 
+        <!-- ################################################################################################ -->
+        <h1><a href="/index.html">STADIUMS</a></h1>
+        <!-- ################################################################################################ -->
+      </div>
+      <nav id="mainav" class="fl_right"> 
+        <!-- ################################################################################################ -->
+        <ul class="clear">
+          <li> <a href="/index.html">Home</a></li>
+  
+          <li><a href="#">About Us</a></li>
+  
+          <li><a class="drop" href="#">Events</a>
+            <ul>
+              <li><a href="#">Organise Events</a></li>
+              <li><a class="drop" href="#">Upcoming Events</a>
+                <ul>
+                  <li><a href="#">Sports</a></li>
+                  <li><a href="#">Concerts</a></li>
+                  <li><a href="#">Corporate</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Past events</a></li>
+            </ul>
+          </li>
+  
+  
+          <li><a class="drop" href="#">Our Stadiums</a>
+            <ul>
+              <li><a href="#">North India</a></li>
+              <li><a href="#">South India</a></li>
+              <li><a href="#">Canada</a></li>
+              <li><a href="#">South Africa</a></li>
+              <li><a href="#">JOIN US NOW</a></li>
+  
+              
+            </ul>
+          </li>
+          
+          <li><a href="/html files/gallery.html">Gallery</a></li>
+          <li><a href="#">Contact Us</a></li>
+          
+        </ul>
+        <!-- ################################################################################################ -->
+      </nav>
+    </header>
+
+
+
+
+    <body>
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Register Stadium</h2>
+                       <form method="POST">
+                           <p> id="demo"</p>
+
+
+
+                        <div class="row row-space">
+                            
+                                <div class="input-group">
+                                    <label class="label">Owner name</label>
+                                    <input class="input--style-4" type="text" id="owner" >
+                                </div>
+                           
+                          
+                        </div>
+
+                        <div class="row row-space">
+                           
+                                <div class="input-group">
+                                    <label class="label">Stadium Name</label>
+                                    <div class="input-group-icon">
+                                        <input class="input--style-4" type="text" id="name" >
+                                    
+                                    </div>
+                                </div>
+                            
+                           
+                        </div>
+
+
+                        <div class="row row-space">
+                         
+                                <div class="input-group">
+                                    <label class="label">Country</label>
+                                    <input class="input--style-4" type="text" id="country" >
+                                </div>
+                            </div>
+                        
+
+                        <div class="row row-space">
+                        
+                            <div class="input-group">
+                                <label class="label"> Capacity </label>
+                                <input class="input--style-4" type="text" id="seats" >
+                            </div>
+                        </div>
+                   
+
+                                        
+                                                
+                   
+                <div class="row row-space">
+                   
+                        <div>
+                            <!-- <input type="button" style="background-color: greenyellow;" value="Add Stadium" onclick="myFunction(xmlDoc,'create')" name="add" />  -->
+                            <button class="button" onclick="loadxmldoc()">Load Stadium</button>
+                            <button class="button" onclick="myFunction(xmlDoc,'create')">Add Stadium</button>
+                        </div>
+                    </div>
+                   
+                    
+                    
+                       
+                       
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+
+
+</html>
+<!-- end document-->

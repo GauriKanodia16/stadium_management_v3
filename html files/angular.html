@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/angular.js"></script>
+    <link rel="stylesheet" href="/css/angular.css">
+</head>
+<body ng-app="Packages1">
+01    <div ng-controller="Packagesctrl1">
+        Rows to display:<input type="number" step="1" min="0" max="7" ng-model="rowlimit"/><br><br>
+        Search:<input type="text" placeholder="Search for details" ng-model="search"><br><br>
+        <table>
+            <tr>
+                <th>Name<br>
+                    Search:<input type="text" placeholder="Search student's name" ng-model="search"></th>
+                <th>Course<br>
+                    Search:<input type="text" placeholder="Search course" ng-model="search"></th>
+                <th>Session<br>
+                    Search:<input type="number" placeholder="Search session" ng-model="search"></th>
+                <th>Quiz_date<br>
+                    Search:<input type="date" placeholder="Search quiz date" ng-model="search"></th>
+                <th>Marks<br>
+                    Search:<input type="number" placeholder="Search marks" ng-model="search"></th>
+                <th>Grades<br>
+                    Search:<input type="text" placeholder="Search for grades" ng-model="search"></th>
+                <th>Teacher_comment<br>
+                    Search:<input type="text" placeholder="Search teacher's comment" ng-model="search"></th>
+            </tr>
+            <tbody>
+                <tr ng-repeat="cou in courses|limitTo:rowlimit|filter:search">
+                    <td>{{cou.Name|uppercase}}</td>
+                    <td>{{cou.Course|uppercase}}</td>
+                    <td>{{cou.Session|number:0}}</td>
+                    <td>{{cou.Quiz_date|date:"dd/MM/yyyy"}}</td>
+                    <td>{{cou.Marks|number:0}}</td>
+                    <td>{{cou.Grades|uppercase}}</td>
+                    <td>{{cou.Teacher_comment|lowercase}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+   
+</body>
+</html>
